@@ -79,10 +79,14 @@ const exampleRouter = require('./routers/blog.router');
 
 app.use('/', exampleRouter);
 
-// Import example Router
-const tutorRouter= require('./routes/tutor.router');
+// Import profile Router
+const tutorRouter= require('./routers/tutor.router');
 
 app.use('/',tutorRouter);
+// Import student Router
+const learnerRouter= require('./routers/forstudent');
+
+app.use('/',learnerRouter);
 
 app.listen(port, () => {
     console.log(`My server listening on port ${port}`);
