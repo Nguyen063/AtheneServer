@@ -24,8 +24,7 @@ app.use(express.static(path.join(__dirname, '/images')));
 
 //Ipmport model
 const Image = require('./models/Blog')
-const homepage = require('./models/homepage')
-const intro= require('./models/intro')
+const intro = require('./models/intro')
 
 var storage = multer.diskStorage({
     destination: "images",
@@ -73,10 +72,7 @@ app.post("/upload", (req, res) => {
     });
 })
 
-//Import Homepage Router
-const homepageRouter = require('./routers/homepage.router');
 
-app.use('/', homepageRouter);
 
 //Import Blog Router
 const blogRouter = require('./routers/blog.router');
