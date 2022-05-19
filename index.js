@@ -82,10 +82,10 @@ const blogRouter = require('./routers/blog.router');
 
 app.use('/', blogRouter);
 
-// Import Tutor Router
-const tutorRouter = require('./routers/tutor.router');
+// Import Profile Tutor Router
+const profileRouter = require('./routers/tutor.router');
 
-app.use('/', tutorRouter);
+app.use('/', profileRouter);
 
 // Import Router
 const learnerRouter= require('./routes/forlearner.router');
