@@ -88,9 +88,9 @@ const profileRouter = require('./routers/profile.router');
 app.use('/', profileRouter);
 
 // Import Learner Router
-const learnerRouter= require('./routes/forlearner.router');
+const learnerRouter = require('./routers/forlearner.router');
 
-app.use('/',learnerRouter);
+app.use('/', learnerRouter);
 
 
 app.listen(port, () => {
