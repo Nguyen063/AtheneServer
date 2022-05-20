@@ -3,6 +3,7 @@ const router = express.Router();
 
 // Import model
 const Blog = require('../models/Blog')
+const Tutor = require('../models/Tutor')
 
 //Router config
 //rendering HomaPage
