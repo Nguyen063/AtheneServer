@@ -2,33 +2,36 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TutorSchema = new Schema({
-    Name: {
+    name: {
         type: String,
         require: true
     },
-    Ava: { type: String, require: true },
-
-    Direct: {
+    thumbPath: { type: String, require: true },
+    followers: {
         type: String,
         require: true
     },
-
-    Gender: {
-        type: String,
-        require: true
-    },
-
-    Subject: {
+    direct: {
         type: String,
         require: true
     },
 
-    Fee: {
+    gender: {
         type: String,
         require: true
     },
 
-    Education: {
+    subject: {
+        type: String,
+        require: true
+    },
+
+    fee: {
+        type: String,
+        require: true
+    },
+
+    education: {
         type: String,
         require: true
     },
@@ -37,12 +40,11 @@ const TutorSchema = new Schema({
         type: String,
             require: true
     },
-    Level: {
-        type: Date,
+    level: {
+        type: String,
         require: true
     },
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
-
 })
 module.exports = mongoose.model("Tutor", TutorSchema)
