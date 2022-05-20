@@ -1,47 +1,50 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const LearnerSchema = new Schema({
-    Name: {
+const TutorSchema = new Schema({
+    name: {
+        type: String,
+        require: true
+    },
+    thumbPath: { type: String, require: true },
+    followers: {
+        type: String,
+        require: true
+    },
+    direct: {
         type: String,
         require: true
     },
 
-    Ava: { type: String, require: true },
-
-    Direct: {
+    gender: {
         type: String,
         require: true
     },
 
-    Gender: {
+    subject: {
         type: String,
         require: true
     },
 
-    Subject: {
+    fee: {
         type: String,
         require: true
     },
 
-    Fee: {
-        type: String,
-        require: true
-    },
-    Request: {
-        type: String,
-        require: true
-    },
-    Education: {
-        type: String,
-        require: true
-    },
-    Caphoc: {
+    education: {
         type: String,
         require: true
     },
 
-    createAt: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now },
+    class: {
+        type: String,
+            require: true
+    },
+    level: {
+        type: String,
+        require: true
+    },
+    // createAt: { type: Date, default: Date.now },
+    // updateAt: { type: Date, default: Date.now },
 })
-module.exports = mongoose.model("Learner", LearnerSchema)
+module.exports = mongoose.model("Tutor", TutorSchema)
