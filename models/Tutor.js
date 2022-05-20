@@ -2,48 +2,45 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TutorSchema = new Schema({
-    name: {
-        type: String,
-        require: true
-    },
-    thumbPath: { type: String, require: true },
-    followers: {
-        type: String,
-        require: true
-    },
-    direct: {
+    Name: {
         type: String,
         require: true
     },
 
-    gender: {
+    Ava: { type: String, require: true },
+
+    Direct: {
         type: String,
         require: true
     },
 
-    subject: {
+    Gender: {
         type: String,
         require: true
     },
 
-    fee: {
+    Subject: {
         type: String,
         require: true
     },
 
-    education: {
+    Fee: {
+        type: String,
+        require: true
+    },
+    Request: {
+        type: String,
+        require: true
+    },
+    Education: {
+        type: String,
+        require: true
+    },
+    Caphoc: {
         type: String,
         require: true
     },
 
-    class: {
-        type: String,
-            require: true
-    },
-    level: {
-        type: String,
-        require: true
-    },
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
 })

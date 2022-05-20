@@ -6,9 +6,11 @@ const LearnerSchema = new Schema({
         type: String,
         require: true
     },
-
     Ava: { type: String, require: true },
-
+    followers: {
+        type: String,
+        require: true
+    },
     Direct: {
         type: String,
         require: true
@@ -28,19 +30,20 @@ const LearnerSchema = new Schema({
         type: String,
         require: true
     },
-    Request: {
-        type: String,
-        require: true
-    },
+
     Education: {
         type: String,
         require: true
     },
-    Caphoc: {
+
+    class: {
+        type: String,
+            require: true
+    },
+    level: {
         type: String,
         require: true
     },
-
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
 })
