@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '/images')));
 
 //Ipmport model
 const Image = require('./models/Blog')
-
+const intro = require('./models/intro')
 
 var storage = multer.diskStorage({
     destination: "images",
@@ -74,10 +74,23 @@ app.post("/upload", (req, res) => {
 
 
 
-//Import Example Router
-const exampleRouter = require('./routers/blog.router');
+//Import Blog Router
+const blogRouter = require('./routers/blog.router');
 
-app.use('/', exampleRouter);
+app.use('/', blogRouter);
+
+// Import Profile Tutor Router
+const profileRouter = require('./routers/profile.router');
+
+app.use('/', profileRouter);
+
+// Import Learner Router
+const learnerRouter = require('./routers/learner.router');
+
+app.use('/', learnerRouter);
+//Import Intro Router
+const introRouter = require('./routers/intro.router');
+app.use('/', introRouter);
 
 app.listen(port, () => {
     console.log(`My server listening on port ${port}`);

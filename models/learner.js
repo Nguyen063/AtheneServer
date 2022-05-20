@@ -1,54 +1,43 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-
 const LearnerSchema = new Schema({
-    name: {
+    Name: {
         type: String,
         require: true
     },
-    thumbPath: { type: String, require: true },
-    followers: {
+    Ava: {
         type: String,
         require: true
     },
-    direct: {
+    Direct: {
         type: String,
         require: true
     },
-
-    gender: {
+    Gender: {
         type: String,
         require: true
     },
-
-    subject: {
+    Subject: {
         type: String,
         require: true
     },
-
-    fee: {
+    Fee: {
         type: String,
         require: true
     },
-
-    request: {
+    Request: {
         type: String,
         require: true
     },
-    grade: {
+    Grade: {
         type: String,
         require: true
     },
-    caphoc: {
+    School: {
         type: String,
         require: true
     },
-
-
-
-
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
+
+
 })
 module.exports = mongoose.model("Learner", LearnerSchema)
