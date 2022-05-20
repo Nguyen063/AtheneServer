@@ -2,7 +2,7 @@ const express = require('express');
 const router = require('../routers/blog.router');
 
 //Import model
-const Tutor = require('../models/tutor')
+const Tutor = require('../models/Tutor')
 
 //Router config
 //Rendering HomePage
