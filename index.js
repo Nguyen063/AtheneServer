@@ -97,6 +97,10 @@ const IntroRouter = require('./routers/intro.router');
 
 app.use('/', IntroRouter);
 
+// Import data Router
+const datasRouter = require('./routers/dataAthene.router');
+
+app.use('/', datasRouter);
 
 app.listen(port, () => {
     console.log(`My server listening on port ${port}`);
