@@ -18,6 +18,9 @@ router.get('/learners', (reg, res) => {
         .catch(err => { err.json({ "Error": err.messages }) })
 })
 
+
+
+
 // Get product by id
 // router.get('/:id', async(req, res) => {
 //     // console.log(req.params.id);
