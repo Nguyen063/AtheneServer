@@ -104,6 +104,10 @@ const datasRouter = require('./routers/dataAthene.router');
 
 app.use('/', datasRouter);
 
+app.use(express.json());
+
+
+
 app.listen(port, () => {
     console.log(`My server listening on port ${port}`);
 })
