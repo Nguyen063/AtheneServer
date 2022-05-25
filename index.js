@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '/images')));
 
 //Ipmport model
 const Image = require('./models/Blog')
-const intro = require('./models/intro')
+// const intro = require('./models/intro')
 
 var storage = multer.diskStorage({
     destination: "images",
