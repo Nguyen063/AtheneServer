@@ -1,8 +1,10 @@
 const express = require('express');
 const router = require('../routers/blog.router');
+// const router = express.Router();
 
 //Import model
-const Learner = require('../models/learner')
+const Learner = require('../models/learner');
+
 
 //Router config
 //Rendering HomePage
@@ -17,6 +19,24 @@ router.get('/learners', (reg, res) => {
         .then(data => { res.json(data) })
         .catch(err => { err.json({ "Error": err.messages }) })
 })
+
+router.get("/search/:key", async(req, res) => {
+    console.log(req.params.key)
+    let data = await Learner.find({
+        "$or": [
+            { "Direct": { $regex: req.params.key } },
+            { "Gender": { $regex: req.params.key } },
+            { "Subject": { $regex: req.params.key } },
+            { "class": { $regex: req.params.key } },
+            { "Level": { $regex: req.params.key } }
+
+        ]
+    })
+    res.send(data)
+
+})
+
+
 
 // Get product by id
 // router.get('/:id', async(req, res) => {

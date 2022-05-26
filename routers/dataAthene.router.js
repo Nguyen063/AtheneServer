@@ -1,19 +1,19 @@
 const express = require('express');
-const router = express.Router();
+const router = require('../routers/blog.router');
 
 //Import model
-const Tutor = require('../models/Tutor')
+const datas = require('../models/dataAthene')
 
 //Router config
 //Rendering HomePage
 router.get('/', (reg, res) => {
-    res.send("Tìm gia sư")
+    res.send("About Athene")
 });
 
 //Get all products
-router.get('/tutors', (reg, res) => {
+router.get('/abouts', (reg, res) => {
     // res.send("Product list")
-    Tutor.find({})
+    datas.find({})
         .then(data => { res.json(data) })
         .catch(err => { err.json({ "Error": err.messages }) })
 })
