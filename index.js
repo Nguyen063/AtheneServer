@@ -24,7 +24,6 @@ app.use(express.static(path.join(__dirname, '/images')));
 
 //Ipmport model
 const Image = require('./models/Blog')
-// const intro = require('./models/intro')
 
 
 var storage = multer.diskStorage({
@@ -36,14 +35,14 @@ var storage = multer.diskStorage({
 });
 let maxSize = 100 * 1024 * 1024; //10MB
 var upload = multer({
-    storage: storage,
-    limits: { fileSize: maxSize }
-}).single("file")
-// app.get("/", (req, res) => {
-//     res.send("Et o et ...");
-// });
+        storage: storage,
+        limits: { fileSize: maxSize }
+    }).single("file")
+    // app.get("/", (req, res) => {
+    //     res.send("Et o et ...");
+    // });
 
-// //Api - Get all products
+//Api - Get all products
 // app.get("/blog", async(req, res) => {
 //     try {
 //         let images = await Image.find();
@@ -54,17 +53,29 @@ var upload = multer({
 // })
 
 
-//API upload file
+// API upload file
 
-// app.post("/upload", (req, res) => {
+// app.post("/update-blog", (req, res) => {
 //     upload(req, res, async(err) => {
 //         if (err) {
 //             res.json({ message: err.message })
+//             return;
 //         } else {
 //             //Insert data into db
 //             let imagesInfo = new Image({
+//                 id: req.body.id,
 //                 name: req.body.name,
-//                 thumbPath: req.file.filename
+//                 author: req.body.author,
+//                 content: req.body.content,
+//                 title1: req.body.title1,
+//                 content1: req.body.content1,
+//                 title2: req.body.title2,
+//                 content2: req.body.content2,
+//                 title3: req.body.title3,
+//                 content3: req.body.content3,
+//                 // thumbPath: req.file.filename,
+//                 // thumbPath1: req.file.filename,
+//                 // thumbPath2: req.file.filename
 //             })
 //             await imagesInfo.save();
 //             res.json({ message: "Success!" });
@@ -87,8 +98,10 @@ const profileRouter = require('./routers/profile.router');
 app.use('/', profileRouter);
 
 // Import Learner Router
-const learnerRouter = require('./routers/learner.router');
-app.use('/', learnerRouter);
+
+const LearnerRouter = require('./routers/learner.router');
+app.use('/', LearnerRouter);
+
 
 // Import Tutor Router
 const tutorRouter = require('./routers/tutor.router');
