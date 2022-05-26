@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = require('../routers/blog.router');
 
 //Import model
 const Tutor = require('../models/Tutor')

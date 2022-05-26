@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LearnerSchema = new Schema({
-    LearnerInfo: {
+    TutorInfo: {
         Name: {
             type: String,
             require: true
@@ -28,27 +28,35 @@ const LearnerSchema = new Schema({
         PhoneNumbe: {
             type: Number,
             required: true
-        }
-    },
-    TutorFinding: {
-        Level: {
+        },
+        Exp: {
             type: String,
             require: true
         },
-        TutorGender: { type: String, require: true },
-        class: {
+        Degree: {
             type: String,
-                require: true
+            require: true
+        },
+        Education: {
+            type: String,
+            require: true
+        },
+        Majoy: {
+            type: String,
+            require: true
+        }
+    },
+    LearnerFinding: {
+        Caphoc: {
+            type: String,
+            require: true
         },
         Subject: {
             type: String,
             require: true
         },
+        LearnerGender: { type: String, require: true },
         Location: {
-            type: String,
-            require: true
-        },
-        Education: {
             type: String,
             require: true
         },
@@ -57,10 +65,6 @@ const LearnerSchema = new Schema({
             require: true
         },
         Schedule: {
-            type: String,
-            require: true
-        },
-        Request: {
             type: String,
             require: true
         },
@@ -73,12 +77,13 @@ const LearnerSchema = new Schema({
             require: true
         }
     },
-    LearnerManage: {
+    TutorManage: {
         UserID: { type: String, required: true },
         CreatedAt: { type: Date, default: Date.now },
         TotalClass: { type: String, required: true },
         ClassID: { type: String, required: true }
     },
+
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
 })
