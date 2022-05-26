@@ -40,18 +40,18 @@ router.get('/update-blog', (req, res) => {
 })
 
 // get blog by id
-router.get('/:blogId', async(req, res) => {
-        try {
-            let data = await Blog.findById(req.params.blogId);
-            res.json(data)
-        } catch (err) {
-            res.json({
-                "Error": err.message
-            })
-        }
+// router.get('/:blogId', async(req, res) => {
+//         try {
+//             let data = await Blog.findById(req.params.blogId);
+//             res.json(data)
+//         } catch (err) {
+//             res.json({
+//                 "Error": err.message
+//             })
+//         }
 
-    })
-    // Insert new a product
+//     })
+// Insert new a product
 router.post("/update-blog", (req, res) => {
     upload(req, res, async(err) => {
         if (err) {
