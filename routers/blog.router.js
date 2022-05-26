@@ -5,10 +5,11 @@ const multer = require('multer');
 
 // Import model
 const Blog = require('../models/Blog')
+
 var storage = multer.diskStorage({
     destination: "images",
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}--${file.originalname}`)
+    filename: (req, thumbPath, cb) => {
+        cb(null, `${Date.now()}--${thumbPath.originalname}`)
             // console.log(file.originalname)
     }
 });
@@ -16,7 +17,7 @@ let maxSize = 100 * 1024 * 1024; //10MB
 var upload = multer({
     storage: storage,
     limits: { fileSize: maxSize }
-}).single("file")
+}).single("thumbPath")
 
 //Router config
 //rendering HomaPage
@@ -69,9 +70,9 @@ router.post("/update-blog", (req, res) => {
                 content2: req.body.content2,
                 title3: req.body.title3,
                 content3: req.body.content3,
-                // thumbPath: req.file.filename,
-                // thumbPath1: req.body.thumbPath1,
-                // thumbPath2: req.body.thumbPath2
+                thumbPath: req.file.filename,
+                thumbPath1: req.file.thumbPath1,
+                thumbPath2: req.file.thumbPath2
 
             })
 
