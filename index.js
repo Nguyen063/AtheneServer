@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, '/images')));
 const Image = require('./models/Blog')
 // const intro = require('./models/intro')
 
+
 var storage = multer.diskStorage({
     destination: "images",
     filename: (req, file, cb) => {
@@ -38,39 +39,40 @@ var upload = multer({
     storage: storage,
     limits: { fileSize: maxSize }
 }).single("file")
-app.get("/", (req, res) => {
-    res.send("Et o et ...");
-});
+// app.get("/", (req, res) => {
+//     res.send("Et o et ...");
+// });
 
-//Api - Get all products
-app.get("/images", async(req, res) => {
-    try {
-        let images = await Image.find();
-        res.json(images);
-    } catch (err) {
-        res.json("message" + err.message)
-    }
-})
+// //Api - Get all products
+// app.get("/blog", async(req, res) => {
+//     try {
+//         let images = await Image.find();
+//         res.json(images);
+//     } catch (err) {
+//         res.json("message" + err.message)
+//     }
+// })
+
 
 //API upload file
 
-app.post("/upload", (req, res) => {
-    upload(req, res, async(err) => {
-        if (err) {
-            res.json({ message: err.message })
-        } else {
-            //Insert data into db
-            let imagesInfo = new Image({
-                name: req.body.name,
-                thumbPath: req.file.filename
-            })
-            await imagesInfo.save();
-            res.json({ message: "Success!" });
-            // console.log("File received:", req.file.filename)
-        }
+// app.post("/upload", (req, res) => {
+//     upload(req, res, async(err) => {
+//         if (err) {
+//             res.json({ message: err.message })
+//         } else {
+//             //Insert data into db
+//             let imagesInfo = new Image({
+//                 name: req.body.name,
+//                 thumbPath: req.file.filename
+//             })
+//             await imagesInfo.save();
+//             res.json({ message: "Success!" });
+//             // console.log("File received:", req.file.filename)
+//         }
 
-    });
-})
+//     });
+// })
 
 
 
@@ -85,12 +87,27 @@ const profileRouter = require('./routers/profile.router');
 app.use('/', profileRouter);
 
 // Import Learner Router
-const learnerRouter = require('./routers/forlearner.router');
-
+const learnerRouter = require('./routers/learner.router');
 app.use('/', learnerRouter);
-//Import Intro Router
-const introRouter = require('./routers/intro.router');
-app.use('/', introRouter);
+
+// Import Tutor Router
+const tutorRouter = require('./routers/tutor.router');
+app.use('/', tutorRouter);
+
+// Import Intro Router
+const IntroRouter = require('./routers/intro.router');
+
+app.use('/', IntroRouter);
+
+// Import data Router
+const datasRouter = require('./routers/dataAthene.router');
+// const router = require('./routers/blog.router');
+
+app.use('/', datasRouter);
+
+app.use(express.json());
+
+
 
 app.listen(port, () => {
     console.log(`My server listening on port ${port}`);
