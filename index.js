@@ -114,9 +114,12 @@ app.use('/', IntroRouter);
 
 // Import data Router
 const datasRouter = require('./routers/dataAthene.router');
-// const router = require('./routers/blog.router');
 
 app.use('/', datasRouter);
+
+//Import feedback router
+const feedback = require('./routers/feedback.router');
+app.use('/', feedback);
 
 app.use(express.json());
 
