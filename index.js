@@ -121,6 +121,12 @@ app.use('/', datasRouter);
 const feedback = require('./routers/feedback.router');
 app.use('/', feedback);
 
+
+//Import class router
+const classManage = require('./routers/class.router');
+app.use('/', classManage);
+
+
 app.use(express.json());
 
 

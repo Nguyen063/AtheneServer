@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ClassSchema = new Schema({
+    id: { type: String, require: true },
     ClassInfo: {
         ClassID: {
             type: String,
