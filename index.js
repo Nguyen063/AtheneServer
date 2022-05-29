@@ -126,6 +126,10 @@ app.use('/', feedback);
 const classManage = require('./routers/class.router');
 app.use('/', classManage);
 
+//Import transaction router
+const Transaction = require('./routers/transaction.router');
+app.use('/', Transaction);
+
 
 app.use(express.json());
 

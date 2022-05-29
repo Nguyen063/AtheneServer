@@ -83,6 +83,13 @@ const LearnerSchema = new Schema({
         TotalClass: { type: String, required: true },
         ClassID: { type: String, required: true }
     },
+    TransTutor: {
+        TransID: { type: String, required: true },
+        DateCreate: { type: Date, default: Date.now },
+        Fee: { type: String, required: true },
+        Content: { type: String, required: true },
+        ReceivableAcc: { type: String, required: true },
+    },
 
     createAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },

@@ -84,6 +84,22 @@ const ClassSchema = new Schema({
             require: true
         }
     },
+    TransLearner: {
+        TransID: { type: String, require: true },
+        DateCreate: { type: Date, default: Date.now },
+        Fee: { type: String, require: true },
+        Content: { type: String, require: true },
+        SendAcc: { type: String, require: true },
+        Method: { type: String, require: true },
+    },
+    TransTutor: {
+        TransID: { type: String, require: true },
+        DateCreate: { type: Date, default: Date.now },
+        Fee: { type: String, require: true },
+        Content: { type: String, require: true },
+        ReceivableAcc: { type: String, require: true },
+        Method: { type: String, require: true },
+    },
     updateAt: { type: Date, default: Date.now },
 })
 module.exports = mongoose.model("Class", ClassSchema)
