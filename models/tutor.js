@@ -86,7 +86,7 @@ const TutorSchema = new Schema({
         Content: { type: String, required: true },
         SendAcc: { type: String, required: true },
     },
-    createAt: { type: Date, default: Date.now },
+    CreateAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
 })
 module.exports = mongoose.model("Tutor", TutorSchema)

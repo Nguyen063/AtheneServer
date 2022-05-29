@@ -91,7 +91,7 @@ const LearnerSchema = new Schema({
         ReceivableAcc: { type: String, required: true },
     },
 
-    createAt: { type: Date, default: Date.now },
+    CreateAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now },
 })
 module.exports = mongoose.model("Learner", LearnerSchema)
