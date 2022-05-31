@@ -35,56 +35,9 @@ var storage = multer.diskStorage({
 });
 let maxSize = 100 * 1024 * 1024; //10MB
 var upload = multer({
-        storage: storage,
-        limits: { fileSize: maxSize }
-    }).single("file")
-    // app.get("/", (req, res) => {
-    //     res.send("Et o et ...");
-    // });
-
-//Api - Get all products
-// app.get("/blog", async(req, res) => {
-//     try {
-//         let images = await Image.find();
-//         res.json(images);
-//     } catch (err) {
-//         res.json("message" + err.message)
-//     }
-// })
-
-
-// API upload file
-
-// app.post("/update-blog", (req, res) => {
-//     upload(req, res, async(err) => {
-//         if (err) {
-//             res.json({ message: err.message })
-//             return;
-//         } else {
-//             //Insert data into db
-//             let imagesInfo = new Image({
-//                 id: req.body.id,
-//                 name: req.body.name,
-//                 author: req.body.author,
-//                 content: req.body.content,
-//                 title1: req.body.title1,
-//                 content1: req.body.content1,
-//                 title2: req.body.title2,
-//                 content2: req.body.content2,
-//                 title3: req.body.title3,
-//                 content3: req.body.content3,
-//                 // thumbPath: req.file.filename,
-//                 // thumbPath1: req.file.filename,
-//                 // thumbPath2: req.file.filename
-//             })
-//             await imagesInfo.save();
-//             res.json({ message: "Success!" });
-//             // console.log("File received:", req.file.filename)
-//         }
-
-//     });
-// })
-
+    storage: storage,
+    limits: { fileSize: maxSize }
+}).single("file")
 
 
 //Import Blog Router
